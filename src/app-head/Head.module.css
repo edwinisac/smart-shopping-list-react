@@ -1,0 +1,17 @@
+.head_container{
+    width:550px;
+    background-color: red;
+    height:100px;
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+    justify-content: space-around;
+    align-items: center;
+}
+.head_name{
+    padding:0px;
+    margin:0px;
+    font-size: 32px;
+    font-family: var(--main-font);
+    font-weight:600;
+}

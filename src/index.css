@@ -1,0 +1,7 @@
+:root{
+  --background-dark:black;
+  --background-light:white;
+  --selector-dark:rgb(0, 255, 0);
+  --selector-light:rgb(96, 170, 255);
+  --main-font: 'Inter', sans-serif;
+}
