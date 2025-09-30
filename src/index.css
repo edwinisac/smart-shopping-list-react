@@ -2,6 +2,37 @@
   --background-dark:black;
   --background-light:white;
   --selector-dark:rgb(0, 255, 0);
-  --selector-light:rgb(96, 170, 255);
+  --selector-light:rgba(0, 119, 255, 0.568);
   --main-font: 'Inter', sans-serif;
+}
+body{
+  margin:0px;
+  padding: 0px;
+  box-sizing: border-box;
+  width:96%;
+  height:90vh;
+
+}
+#root{
+  width:100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+/* styles for app.jsx */
+
+
+.main_container{
+  background-color: var(--background-light);
+  height:90vh;
+  width:60%;
+  display: flex;
+  justify-content: center;
+  padding:10px;
+  border-radius:20px;
+  box-shadow:5px 5px 5px rgb(160, 153, 153);
+  box-shadow: 0px 0px 20px 5px rgb(160, 153, 153);
+  
+  
 }
