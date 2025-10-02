@@ -1,6 +1,9 @@
 import Categories from "./app-categories/Categories"
 import Head from "./app-head/Head"
+import List from "./list/List"
 import Search from "./search/Search"
+import Total from "./total/Total"
+
 
 
 
@@ -11,6 +14,8 @@ function App(){
       <Head/>
       <Categories/>
       <Search/>
+      <List/>
+      <Total/>
 
 
     </div>

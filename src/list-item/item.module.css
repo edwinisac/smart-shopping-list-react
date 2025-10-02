@@ -1,0 +1,70 @@
+.list_item {
+    margin-top:30px;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap:30px;
+  align-items: center;
+  font-family: var(--main-font);
+
+}
+.list_checkbox {
+  display: none;
+}
+.custom_checkbox {
+  width: 30px;
+  height: 30px;
+  border: 2px solid rgba(160, 160, 160, 0.425);
+  border-radius: 10px;
+}
+.check {
+  color: white;
+  background-color: var(--selector-light);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  transition: ease-in-out 0.2s;
+  display:none; 
+  /* toggle using js according to the status of the checkbox */
+}
+.name_container{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    justify-content: flex-start;
+
+    
+}
+.item_name{
+    margin:0px;
+    padding:0px;
+    font-weight: 300;
+    font-size: 25px;
+}
+.item_category{
+    margin:0px;
+    font-size: 15px;
+    color:rgb(160, 160, 160);
+    
+}
+.price{
+    color:rgb(160, 160, 160);
+    font-weight: 500;
+
+}
+.list_actions{
+    color:rgb(160, 160, 160);
+    font-size:20px;
+}
+.edit:hover{
+    color:blue;
+}
+.delete:hover{
+    color:red;
+}
