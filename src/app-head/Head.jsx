@@ -6,7 +6,7 @@ import Style from "./Head.module.css";
 function Head() {
   return (
     <>
-      <div className={Style.head_container}>
+      <div className={`${Style.head_container}`}>
         <h2 className={Style.head_name}>Smart Shopping List</h2>
         <i className={`${Style.head_icon} ${Style.head_icon_moon}`}>
           <FontAwesomeIcon icon={faMoon} />

@@ -38,3 +38,11 @@
 .head_icon_settings:hover{
     background-color: var(--selector-light);
 }
+
+
+/* dark mode */
+
+.head_container_dark{
+  background-color: var(--background-dark);
+  color:white;
+}
