@@ -68,3 +68,113 @@
 .delete:hover{
     color:red;
 }
+
+
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  .list_item {
+    gap: 20px;
+  }
+
+  .custom_checkbox {
+    width: 28px;
+    height: 28px;
+  }
+
+  .item_name {
+    font-size: 22px;
+  }
+
+  .item_category {
+    font-size: 14px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+
+  .list_actions {
+    font-size: 18px;
+  }
+}
+
+/* Large phones / small tablets (≤ 768px) */
+@media (max-width: 768px) {
+  .list_item {
+    gap: 15px;
+  }
+
+  .custom_checkbox {
+    width: 25px;
+    height: 25px;
+  }
+
+  .item_name {
+    font-size: 20px;
+  }
+
+  .item_category {
+    font-size: 13px;
+  }
+
+  .price {
+    font-size: 13px;
+  }
+
+  .list_actions {
+    font-size: 17px;
+  }
+}
+
+/* Small phones (≤ 480px) */
+@media (max-width: 480px) {
+  .list_item {
+    flex-wrap: wrap; /* allow wrapping */
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .custom_checkbox {
+    width: 22px;
+    height: 22px;
+  }
+
+  .item_name {
+    font-size: 18px;
+  }
+
+  .item_category {
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 12px;
+  }
+
+  .list_actions {
+    font-size: 16px;
+  }
+}
+
+/* Extra small phones (≤ 360px) */
+@media (max-width: 360px) {
+  .list_item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .item_name {
+    font-size: 16px;
+  }
+
+  .item_category,
+  .price {
+    font-size: 11px;
+  }
+
+  .list_actions {
+    font-size: 15px;
+  }
+}

@@ -46,3 +46,74 @@
   background-color: var(--background-dark);
   color:white;
 }
+
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+  .head_container {
+    height: 80px;
+    gap: 15px;
+  }
+
+  .head_name {
+    font-size: 28px;
+  }
+
+  .head_icon {
+    font-size: 22px;
+    padding: 4px;
+  }
+}
+
+/* Large phones / small tablets (≤ 768px) */
+@media (max-width: 768px) {
+  .head_container {
+    height: 70px;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+  .head_name {
+    font-size: 24px;
+  }
+
+  .head_icon {
+    font-size: 20px;
+    padding: 3px;
+  }
+}
+
+/* Small phones (≤ 480px) */
+@media (max-width: 480px) {
+  .head_container {
+    height: 60px;
+    gap: 10px;
+  }
+
+  .head_name {
+    font-size: 20px;
+  }
+
+  .head_icon {
+    font-size: 18px;
+    padding: 2px;
+  }
+}
+
+/* Extra small phones (≤ 360px) */
+@media (max-width: 360px) {
+  .head_container {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .head_name {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .head_icon {
+    font-size: 16px;
+  }
+}

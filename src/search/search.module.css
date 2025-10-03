@@ -29,3 +29,75 @@
     border:1px solid var(--selector-light);
     box-shadow: 0px 0px 5px var(--selector-light);
 }
+
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+    .search_div {
+      width: 65%;
+      height: 45px;
+    }
+  
+    .search_input {
+      font-size: 14px;
+    }
+  
+    .search_div_icon {
+      font-size: 18px;
+    }
+  }
+  
+  /* Large phones / small tablets (≤ 768px) */
+  @media (max-width: 768px) {
+    .search_div {
+      width: 80%;
+      height: 45px;
+      padding: 0px 8px;
+    }
+  
+    .search_input {
+      width: 80%;
+      font-size: 14px;
+    }
+  
+    .search_div_icon {
+      font-size: 17px;
+    }
+  }
+  
+  /* Small phones (≤ 480px) */
+  @media (max-width: 480px) {
+    .search_div {
+      width: 95%;
+      height: 42px;
+      padding: 0px 6px;
+    }
+  
+    .search_input {
+      width: 78%;
+      font-size: 13px;
+    }
+  
+    .search_div_icon {
+      font-size: 16px;
+    }
+  }
+  
+  /* Extra small phones (≤ 360px) */
+  @media (max-width: 360px) {
+    .search_div {
+      width: 100%;
+      height: 40px;
+      padding: 0px 5px;
+      border-radius: 20px;
+    }
+  
+    .search_input {
+      font-size: 12px;
+    }
+  
+    .search_div_icon {
+      font-size: 15px;
+    }
+  }
+  

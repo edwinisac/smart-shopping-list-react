@@ -28,3 +28,74 @@
 }
     
 /* dark theme */
+
+
+
+
+/* Tablets (≤ 1024px) */
+@media (max-width: 1024px) {
+    .category_container {
+      width: 90%;
+    }
+  
+    .btn {
+      width: 80px;
+      padding: 8px;
+      font-size: 13px;
+    }
+  }
+  
+  /* Large phones / small tablets (≤ 768px) */
+  @media (max-width: 768px) {
+    .category_container {
+      width: 100%;
+      overflow-x: auto;
+      scrollbar-width: none; /* Firefox */
+    }
+  
+    .category_container::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+  
+    .category_list {
+      justify-content: flex-start;
+      gap: 10px;
+      flex-wrap: nowrap;
+    }
+  
+    .btn {
+      width: auto;
+      min-width: 75px;
+      padding: 7px 12px;
+      font-size: 13px;
+    }
+  }
+  
+  /* Small phones (≤ 480px) */
+  @media (max-width: 480px) {
+    .category_container {
+      width: 100%;
+      overflow-x: auto;
+    }
+  
+    .category_list {
+      gap: 8px;
+    }
+  
+    .btn {
+      min-width: 70px;
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 10px;
+    }
+  }
+  
+  /* Extra small phones (≤ 360px) */
+  @media (max-width: 360px) {
+    .btn {
+      min-width: 65px;
+      padding: 5px 8px;
+      font-size: 11px;
+    }
+  }
+  

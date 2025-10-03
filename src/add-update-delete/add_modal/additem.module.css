@@ -1,0 +1,37 @@
+.add_container{
+    width:45%;
+    background-color: white;
+    font-family: var(--main-font);
+    height: 90%;
+    position: fixed;
+    border-radius:20px;
+    box-shadow: 0px 0px 5px 5px rgba(146, 146, 146, 0.671);
+    /* transform: translate(-50%, -50%); */
+    z-index:1000;
+}
+
+/* Tablets (<= 1024px) */
+@media (max-width: 1024px) {
+    .add_container {
+      width: 60%;
+      height: 85%;
+    }
+  }
+  
+  /* Large phones / small tablets (<= 768px) */
+  @media (max-width: 768px) {
+    .add_container {
+      width: 80%;
+      height: 80%;
+      border-radius: 15px;
+    }
+  }
+  
+  /* Small phones (<= 480px) */
+  @media (max-width: 480px) {
+    .add_container {
+      width: 95%;
+      height: 100%;
+      border-radius: 10px;
+    }
+  }
