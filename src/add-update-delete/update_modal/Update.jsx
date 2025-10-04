@@ -1,16 +1,16 @@
 import Button from "../modal_parts/buttons/Buttons.jsx"
 import Select from "../modal_parts/categories/Select.jsx"
 import Form from "../modal_parts/form/Form"
-import style from "./additem.module.css"
+import style from "./update.module.css"
 
 
 
 
-function Additem(){
+function Update(){
     return(
         
-         <div className={style.add_container}>
-            <h1 className={style.heading}>Add Item</h1>
+         <div className={style.update_container}>
+            <h1 className={style.heading}>Update Item</h1>
             <Form/>
             <Select/>
             <Button/>
@@ -18,4 +18,4 @@ function Additem(){
         
     )
 }
-export default Additem
+export default Update
