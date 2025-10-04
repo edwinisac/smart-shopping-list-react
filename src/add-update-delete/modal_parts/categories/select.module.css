@@ -1,0 +1,37 @@
+.select_container{
+    width:60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+
+
+
+.category_list{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:10px;
+    padding: 0px;
+    padding-left:15px;
+}
+.item{
+    list-style: none;
+}
+.btn{
+    background-color: rgba(160, 160, 160, 0.425);
+    padding:10px;
+    width: 90px;
+    border:none;
+    border-radius: 15px;
+    font-family:var(--main-font);
+    font-size:14px;
+}
+.btn:hover{
+    background-color:var(--selector-light);
+    color:rgb(241, 241, 241);
+}

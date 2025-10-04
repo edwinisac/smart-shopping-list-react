@@ -1,0 +1,101 @@
+.form_container {
+  height: 40%;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding-top: 30px;
+}
+.input_field {
+  background-color: rgba(160, 160, 160, 0.466);
+  color: rgba(59, 59, 59, 0.849);
+  border-style: none;
+  width: 80%;
+  height:40px;
+  font-family: var(--main-font);
+  padding:5px;
+  font-size: 14px;
+  border-radius:15px;
+  outline:none;
+  transition: ease 0.1s;
+
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.input_field:focus{
+    border:2px solid var(--selector-light);
+
+}
+.text{
+    resize:none;
+    overflow:auto;
+    height:70px;
+}
+
+/* Tablets (max width 1024px) */
+@media (max-width: 1024px) {
+  .form_container {
+    width: 80%;
+    height: auto;
+    gap: 25px;
+    padding-top: 20px;
+  }
+
+  .input_field {
+    width: 90%;
+    font-size: 13px;
+  }
+
+  .text {
+    height: 60px;
+  }
+}
+
+/* Mobile large (max width 768px) */
+@media (max-width: 768px) {
+  .form_container {
+    width: 90%;
+    gap: 20px;
+  }
+
+  .input_field {
+    width: 95%;
+    font-size: 12px;
+    height: 35px;
+  }
+
+  .text {
+    height: 55px;
+  }
+}
+
+/* Mobile small (max width 480px) */
+@media (max-width: 480px) {
+  .form_container {
+    width: 100%;
+    gap: 15px;
+    padding-top: 15px;
+  }
+
+  .input_field {
+    width: 95%;
+    font-size: 12px;
+    height: 32px;
+    padding: 4px;
+  }
+
+  .text {
+    height: 50px;
+  }
+}
