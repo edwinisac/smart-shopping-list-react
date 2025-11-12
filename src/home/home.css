@@ -1,0 +1,179 @@
+.home-container {
+  box-sizing: border-box;
+  height: 90%;
+  padding-top: 30px;
+}
+
+.home-container .list {
+  margin-top: 0px;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 10px;
+  height: 80%;
+  overflow-y: auto;
+}
+.home-container .list-item {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  background-color: rgb(228, 228, 228);
+  padding: 0px 5px;
+  border-radius: 15px;
+  transition: all ease 0.3s;
+  box-shadow: 0px 0px 5px;
+}
+/* when the item is selected */
+.home-container .item-checked {
+  text-decoration: line-through;
+  background-color: rgb(247, 103, 103);
+  color: grey;
+}
+
+.home-container .checkbox {
+  border: 1px solid black;
+  border-radius: 50px;
+  padding: 5px;
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.home-container .item-name {
+  margin: 0px;
+  font-size: 20px;
+  flex-grow: 1;
+}
+.home-container .item-price {
+  flex-grow: 0.4;
+}
+
+.home-container .list-button {
+  border: none;
+  width: 70px;
+  height: 30px;
+  border-radius: 25px;
+  background-color: rgb(190, 188, 188);
+  cursor: pointer;
+  box-shadow: 0px 0px 2px;
+  transition: all ease 0.2s;
+}
+.home-container .update-button:hover {
+  background-color: lightblue;
+  box-shadow: 2px 2px 5px;
+}
+.home-container .delete-button:hover {
+  background-color: rgb(231, 196, 196);
+  box-shadow: 2px 2px 5px;
+}
+.home-container .horizontal-line{
+    border:none;
+    background-color: rgb(126, 197, 126);
+    height: 3px;
+}
+.home-container .home-panel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 18px;
+}
+.home-contaier .home-panel p {
+  margin: 0px;
+}
+.home-container .addbtn{
+    width:150px;
+    height:40px;
+    margin-top:10px;
+    font-size: 20px;
+    border-radius: 16px;
+    cursor: pointer;
+    border:none;
+    box-shadow: 0px 0px 5px;
+    background-color: rgb(126, 221, 126);
+
+}
+.home-container .addbtn:hover{
+    border:1px solid black;
+}
+.home-container .price-symbol {
+  color: brown;
+}
+
+
+
+@media (max-width: 2000px) {
+    .home-container{
+        width:70%;
+    }
+}
+
+/* This @media means when the screen width is 1600px or
+   less, we will divide the grid into 6 columns. */
+@media (max-width: 1600px) {
+.home-container{
+    width: 100%;
+}
+  
+
+}
+
+@media (max-width: 1300px) {
+ .home-container{
+    width: 80%;
+ }
+}
+
+@media (max-width: 1000px) {
+    .home-container{
+        width:100%;
+    }
+    .home-container .checkbox{
+        width:18px;
+        height: 18px;
+    }
+    .home-container .item-name{
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 800px) {
+    .home-container .checkbox{
+        width:15px;
+        height: 15px;
+    }
+    .home-container .item-name{
+        font-size: 18px;
+    }
+    .home-container .list-button{
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left:10px;
+
+    }
+    .home-container .addbtn{
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+}
+
+@media (max-width: 575px) {
+
+}
+
+@media (max-width: 450px) {
+
+}
