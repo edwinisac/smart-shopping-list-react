@@ -1,7 +1,8 @@
 import { Header } from "../components/Header";
-import { Pen, Trash2, Check ,Plus} from "lucide-react";
+import { Link } from "react-router-dom";
 
 import "./home.css";
+import { Pen, Trash2, Check, Plus } from "lucide-react";
 
 export function Home() {
   return (
@@ -43,11 +44,18 @@ export function Home() {
             </button>
           </li>
         </ul>
-        <hr className="horizontal-line"/>
+        <hr className="horizontal-line" />
         <div className="home-panel">
           <p>count: 2</p>
-          <button className="addbtn"><Plus size="36px" strokeWidth="4px" color="grey"/></button>
-          <p>Total: <span className="price-symbol">₹</span> 200</p>
+          <Link to="/add">
+            {" "}
+            <button className="addbtn">
+              <Plus size="36px" strokeWidth="4px" color="grey" />
+            </button>
+          </Link>
+          <p>
+            Total: <span className="price-symbol">₹</span> 200
+          </p>
         </div>
       </div>
     </>
