@@ -3,7 +3,7 @@ import logo from "../assets/images/logo-small.png";
 import { Search } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export function Header() {
+export function Header({currentPage}) {
   return (
     <div className="header">
       <Link to="/">
@@ -13,13 +13,13 @@ export function Header() {
   
 
       <div className="search-container">
-        <input type="text" />
+        <input type="text" disabled={currentPage==="add" || currentPage==="update"} />
         <div className="search-icon">
           <Search color="grey" size="30px" />
         </div>
       </div>
       <div className="categories">
-        <select name="select" id="">
+        <select name="select" id="" disabled={currentPage==="add" || currentPage==="update"} >
           <option className="values" value="All">
             All
           </option>

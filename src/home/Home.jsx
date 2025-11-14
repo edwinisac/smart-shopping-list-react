@@ -7,7 +7,7 @@ import { Pen, Trash2, Check, Plus } from "lucide-react";
 export function Home() {
   return (
     <>
-      <Header />
+      <Header disableHeader={false}/>
       <div className="home-container">
         <ul className="list">
           <li className="list-item ">
