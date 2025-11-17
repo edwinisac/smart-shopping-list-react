@@ -3,32 +3,65 @@ import { Link } from "react-router-dom";
 
 import "./home.css";
 import { Pen, Trash2, Check, Plus } from "lucide-react";
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 
 export function Home() {
+  const [items, setitems] = useState([]);
+
+  useEffect(() => {
+    const fetchItemData = async () => {
+      const res = await axios.get("http://localhost:5000/items");
+      setitems(res.data);
+    };
+    fetchItemData();
+  }, []);
+
+  let quantity = 0;
+  let totalPrice = 0;
+  items.forEach((item) => {
+    quantity += item.qty;
+    totalPrice += item.qty * item.price;
+  });
+
   return (
     <>
-      <Header disableHeader={false}/>
+    <title>smart cart</title>
+      <Header disableHeader={false} />
       <div className="home-container">
         <ul className="list">
-          <li className="list-item ">
-            {/*add class name item-checked to lis-item for checked features  */}
-            <div className="checkbox">
-              {/* add this button for showing check mark */}
-              {/* <Check color="green" size="20px" strokeWidth="4px" /> */}
-            </div>
-            <p className="item-name">New Item </p>
-            <p className="item-price">
-              <span className="price-symbol">₹</span> 100
-            </p>
-            <button className="update-button list-button">
-              <Pen size="20px" color="blue" />
-            </button>
-            <button className="delete-button list-button">
-              <Trash2 size="20px" color="red" />
-            </button>
-          </li>
+          {items.map((item) => {
+            return (
+              <li
+                key={item.id}
+                className={`${item.status && "item-checked"} list-item `}
+              >
+                {/*add class name item-checked to lis-item for checked features  */}
+                <div className="checkbox">
+                  {/* add this button for showing check mark */}
+                  {item.status && (
+                    <Check color="green" size="20px" strokeWidth="4px" />
+                  )}
+                </div>
+                <p className="item-name">{item.name}</p>
+                <p className="item-quantity">
+                  {item.qty} <span className="quantity-symbol">x</span>
+                </p>
+                <p className="item-price">
+                  <span className="price-symbol">₹</span> {item.price}
+                </p>
+                <button className="update-button list-button">
+                  <Pen size="20px" color="blue" />
+                </button>
+                <button className="delete-button list-button">
+                  <Trash2 size="20px" color="red" />
+                </button>
+              </li>
+            );
+          })}
 
-          <li className="list-item item-checked">
+          {/* <li className="list-item item-checked">
             <div className="checkbox">
               <Check color="green" size="20px" strokeWidth="4px" />
             </div>
@@ -42,11 +75,11 @@ export function Home() {
             <button className="delete-button list-button">
               <Trash2 size="20px" color="red" />
             </button>
-          </li>
+          </li> */}
         </ul>
         <hr className="horizontal-line" />
         <div className="home-panel">
-          <p>count: 2</p>
+          <p>count: {quantity}</p>
           <Link to="/add">
             {" "}
             <button className="addbtn">
@@ -54,7 +87,7 @@ export function Home() {
             </button>
           </Link>
           <p>
-            Total: <span className="price-symbol">₹</span> 200
+            Total: <span className="price-symbol">₹</span> {totalPrice}
           </p>
         </div>
       </div>

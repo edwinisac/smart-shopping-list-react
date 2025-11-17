@@ -29,7 +29,7 @@ export function Header({currentPage}) {
           <option className="values" value="clothing">
             Clothing
           </option>
-          <option className="values" value="beuty">
+          <option className="values" value="beauty">
             Beuty
           </option>
           <option className="values" value="electronics">

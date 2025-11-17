@@ -50,6 +50,10 @@
   font-size: 20px;
   flex-grow: 1;
 }
+.home-container .quantity-symbol{
+  color:green;
+  font-size: 20px;
+}
 .home-container .item-price {
   flex-grow: 0.4;
 }
