@@ -1,12 +1,29 @@
 import "./form.css";
-export function Form({currentPage}) {
-    console.log(currentPage);
+export function Form({ currentPage, items, id }) {
+  const selectedItem = items.find((item) => item.id == id);
+
+  if (currentPage === "update" && !selectedItem) {
+    return <p>Loading...</p>;
+  }
   return (
     <div className="form-container">
-      <label htmlFor="name">Product Name</label>
-      <input type="text" className="item-name field" id="name" placeholder="Enter the products name"/>
+      <label htmlFor="name">Product Name </label>
+      <input
+        type="text"
+        className="item-name field"
+        id="name"
+        placeholder="Enter the products name"
+        defaultValue={currentPage === "update" ? selectedItem?.name : ""}
+      />
       <label htmlFor="price">Product Price</label>
-      <input type="number"  step={0.1} className="item-price field" id="price" placeholder="Enter the price"/>
+      <input
+        type="number"
+        step={0.1}
+        className="item-price field"
+        id="price"
+        placeholder="Enter the price"
+        defaultValue={currentPage==="update" ? selectedItem?.price : ""}
+      />
       <label htmlFor="category">Select Category</label>
       <select className="category-selector" id="category">
         <option value="select">--select--</option>
@@ -30,7 +47,13 @@ export function Form({currentPage}) {
         </option>
       </select>
 
-      <button className={`action-button ${currentPage==="update"? "update-button":""}`}>{currentPage==="add"?"ADD":"UPDATE"}</button>
+      <button
+        className={`action-button ${
+          currentPage === "update" ? "update-button" : ""
+        }`}
+      >
+        {currentPage === "add" ? "ADD" : "UPDATE"}
+      </button>
     </div>
   );
 }

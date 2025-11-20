@@ -1,47 +1,47 @@
 {
   "items": [
     {
-      "id": 1,
-      "name": "Balloons",
-      "qty": 20,
-      "price": 100,
-      "category": "party",
-      "status": true
-    },
-    {
-      "id": 2,
-      "name": "Cake",
-      "qty": 1,
-      "price": 200,
-      "category": "food",
+      "id": "1",
+      "name": "towel",
+      "qty": 3,
+      "price": 80,
+      "category": "clothing",
       "status": false
     },
     {
-      "id": 3,
+      "id": "2",
+      "name": "bulb",
+      "qty": 5,
+      "price": 200,
+      "category": "electronics",
+      "status": true
+    },
+    {
+      "id": "3",
       "name": "Plates",
       "qty": 25,
       "price": 50,
       "category": "party",
-      "status": true
+      "status": false
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Juice Pack",
       "qty": 6,
       "price": 120,
       "category": "food",
-      "status": false
+      "status": true
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Chips",
       "qty": 4,
       "price": 80,
       "category": "food",
-      "status": true
+      "status": false
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Candles",
       "qty": 12,
       "price": 40,
@@ -49,7 +49,7 @@
       "status": true
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Napkins",
       "qty": 30,
       "price": 30,
@@ -57,45 +57,44 @@
       "status": false
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Soft Drinks",
       "qty": 6,
       "price": 150,
       "category": "food",
-      "status": true
+      "status": false
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Gift Wrap",
       "qty": 5,
       "price": 60,
       "category": "party",
-      "status": false
+      "status": true
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Chocolates",
       "qty": 10,
       "price": 120,
       "category": "food",
-      "status": true
+      "status": false
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Paper Cups",
       "qty": 20,
       "price": 40,
       "category": "party",
-      "status": true
+      "status": false
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Cookies",
       "qty": 3,
       "price": 90,
       "category": "food",
-      "status": false
+      "status": true
     }
   ]
-
 }

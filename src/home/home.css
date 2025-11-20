@@ -30,7 +30,7 @@
 /* when the item is selected */
 .home-container .item-checked {
   text-decoration: line-through;
-  background-color: rgb(247, 103, 103);
+  background-color: #ffb3b3;
   color: grey;
 }
 
@@ -49,6 +49,9 @@
   margin: 0px;
   font-size: 20px;
   flex-grow: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .home-container .quantity-symbol{
   color:green;
