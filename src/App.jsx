@@ -32,7 +32,7 @@ function App() {
     <div className='main-container'>
       <Routes>
         <Route path="/" element={<Home items={items} fetchItemData={fetchItemData}/>}/>
-        <Route path="/add" element={<AddItem items={items}/>}/>
+        <Route path="/add" element={<AddItem items={items} fetchItemData={fetchItemData}/>}/>
         <Route path="/update/:id" element={<Update items={items}/>}/>
         <Route path="*" element={<Error/>}/>
         

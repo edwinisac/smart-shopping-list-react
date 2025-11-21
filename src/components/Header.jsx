@@ -38,6 +38,9 @@ export function Header({currentPage}) {
           <option className="values" value="kids">
             Kids
           </option>
+          <option className="values" value="party">
+          party
+        </option>
           <option className="values" value="vehicles">
             Vehicles
           </option>

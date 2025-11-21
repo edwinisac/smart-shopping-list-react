@@ -32,6 +32,11 @@ export function Home({items,fetchItemData}) {
     navigate(`/update/${item.id}`);
   }
 
+  const handleDeleteButton=async (item)=>{
+    await axios.delete(`http://localhost:5000/items/${item.id}`);
+    await fetchItemData();
+  }
+
   return (
     <>
     <title>smart cart</title>
@@ -61,7 +66,7 @@ export function Home({items,fetchItemData}) {
                 <button className="update-button list-button" onClick={()=>handleUpdateButton(item)}>
                   <Pen size="20px" color="blue" />
                 </button>
-                <button className="delete-button list-button">
+                <button className="delete-button list-button" onClick={()=>handleDeleteButton(item)}>
                   <Trash2 size="20px" color="red" />
                 </button>
               </li>
