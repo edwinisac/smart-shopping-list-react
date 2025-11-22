@@ -33,7 +33,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home items={items} fetchItemData={fetchItemData}/>}/>
         <Route path="/add" element={<AddItem items={items} fetchItemData={fetchItemData}/>}/>
-        <Route path="/update/:id" element={<Update items={items}/>}/>
+        <Route path="/update/:id" element={<Update items={items} fetchItemData={fetchItemData}/>}/>
         <Route path="*" element={<Error/>}/>
         
       </Routes>

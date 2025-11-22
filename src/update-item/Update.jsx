@@ -3,7 +3,7 @@ import { Form } from "../components/Form";
 import { Header } from "../components/Header";
 
 
-export function Update({items}) {
+export function Update({items, fetchItemData}) {
 const {id}=useParams();
 
 
@@ -11,7 +11,7 @@ const {id}=useParams();
     <>
     <title>smart cart-update</title>
       <Header currentPage="update" />
-      <Form currentPage="update" items={items} id={id}/>
+      <Form currentPage="update" items={items} id={id} fetchItemData={fetchItemData} />
     </>
   );
 }

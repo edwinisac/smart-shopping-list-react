@@ -1,58 +1,56 @@
-
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./form.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-export function Form({ currentPage, items, id ,fetchItemData }) {
-
-
-  const[name,setName]=useState("");
-  const[price,setPrice]=useState(0);
-  const[qty,setQty]=useState(0);
-  const[ctgry,setCtgry]=useState("");
-
-
-
-  const navigate=useNavigate();
-
-
-  const handleChange=(e,element)=>{
-    if(element==="name"){
-      setName(e.target.value)
-      console.log(name);
-    }
-    else if(element==="price"){
-      setPrice(e.target.value)
-      console.log(price);    }
-    else if(element==="qty"){
-      setQty(e.target.value)
-      console.log(qty);    }
-    else if(element==="category"){
-      setCtgry(e.target.value)
-      console.log(ctgry);    }
-  }
-
-  const addButtonClick=async()=>{
-     await axios.post("http://localhost:5000/items",{
-      name:name,
-      price:price,
-      qty:qty,
-      category:ctgry,
-      status:false
-     });
-     await fetchItemData();
-     navigate("/")
-
-
-  }
-
-  const updateButtonClick=()=>{
-    alert("update");
-  }
-
+export function Form({ currentPage, items, id, fetchItemData }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    price: "",
+    qty: "",
+    category: "",
+  });
 
   const selectedItem = items.find((item) => item.id == id);
+
+  useEffect(() => {
+    if (currentPage === "update" && selectedItem) {
+      setFormData({
+        name: selectedItem.name,
+        price: selectedItem.price,
+        qty: selectedItem.qty,
+        category: selectedItem.category,
+      });
+    }
+  }, [currentPage, selectedItem]);
+
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [id]: value,
+    }));
+  };
+
+  const addButtonClick = async () => {
+    await axios.post("http://localhost:5000/items", {
+      ...formData,
+    status:false
+    });
+    await fetchItemData();
+    navigate("/");
+  };
+
+  const updateButtonClick = async () => {
+    await axios.put(`http://localhost:5000/items/${id}`, {
+      ...formData,
+      status: selectedItem.status,
+    });
+    await fetchItemData();
+    navigate("/");
+  };
 
   if (currentPage === "update" && !selectedItem) {
     return <p>Loading...</p>;
@@ -65,8 +63,10 @@ export function Form({ currentPage, items, id ,fetchItemData }) {
         className="item-name field"
         id="name"
         placeholder="Enter the products name"
-        defaultValue={currentPage === "update" ? selectedItem?.name : ""}
-        onChange={(e)=>{handleChange(e,"name")}}
+        value={formData.name}
+        onChange={(e) => {
+          handleChange(e);
+        }}
       />
       <label htmlFor="price">Product Price</label>
       <input
@@ -75,28 +75,33 @@ export function Form({ currentPage, items, id ,fetchItemData }) {
         className="item-price field"
         id="price"
         placeholder="Enter the price"
-        defaultValue={currentPage === "update" ? selectedItem?.price : ""}
-        onChange={(e)=>{handleChange(e,"price")}}
+        value={formData.price}
+        onChange={(e) => {
+          handleChange(e);
+        }}
       />
 
-      <label htmlFor="price">Product Quantity</label>
+      <label htmlFor="quantity">Product Quantity</label>
       <input
         type="number"
         step={1}
         className="item-quantity field"
-        id="quantity"
+        id="qty"
         placeholder="Enter quantity"
-        defaultValue={currentPage === "update" ? selectedItem?.qty : ""}
-        onChange={(e)=>{handleChange(e,"qty")}}
-
+        value={formData.qty}
+        onChange={(e) => {
+          handleChange(e);
+        }}
       />
 
       <label htmlFor="category">Select Category</label>
       <select
         className="category-selector"
         id="category"
-        defaultValue={currentPage === "update" ? selectedItem?.category : ""}
-        onChange={(e)=>{handleChange(e,"category")}}
+        value={formData.category}
+        onChange={(e) => {
+          handleChange(e);
+        }}
       >
         <option value="">--select--</option>
         <option className="values" value="food">
@@ -126,7 +131,7 @@ export function Form({ currentPage, items, id ,fetchItemData }) {
         className={`action-button ${
           currentPage === "update" ? "update-button" : ""
         }`}
-        onClick={currentPage==="add" ? addButtonClick : updateButtonClick}
+        onClick={currentPage === "add" ? addButtonClick : updateButtonClick}
       >
         {currentPage === "add" ? "ADD" : "UPDATE"}
       </button>

@@ -3,7 +3,14 @@ import logo from "../assets/images/logo-small.png";
 import { Search } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export function Header({currentPage}) {
+export function Header({currentPage,setSearch,search,searchIconClick}) {
+
+const handleChange=(e)=>{
+  setSearch(e.target.value);
+}
+
+
+
   return (
     <div className="header">
       <Link to="/">
@@ -13,8 +20,8 @@ export function Header({currentPage}) {
   
 
       <div className="search-container">
-        <input type="text" disabled={currentPage==="add" || currentPage==="update"} />
-        <div className="search-icon">
+        <input type="text" disabled={currentPage==="add" || currentPage==="update"} onChange={handleChange}/>
+        <div className="search-icon" value={search} onClick={currentPage==="home" ? searchIconClick:undefined}>
           <Search color="grey" size="30px" />
         </div>
       </div>
