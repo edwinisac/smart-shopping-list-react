@@ -112,6 +112,10 @@
   color: brown;
 }
 
+.home-container .not-found{
+  text-align: center;
+  font-size: 24px;
+}
 
 
 @media (max-width: 2000px) {

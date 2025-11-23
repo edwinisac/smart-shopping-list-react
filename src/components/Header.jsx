@@ -1,15 +1,18 @@
 import "./header.css";
 import logo from "../assets/images/logo-small.png";
-import { Search } from "lucide-react";
+import { Search, BadgeX } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export function Header({currentPage,setSearch,search,searchIconClick}) {
-
-const handleChange=(e)=>{
-  setSearch(e.target.value);
-}
-
-
+export function Header({
+  currentPage,
+  setSearch,
+  search,
+  searchIconClick,
+  searchIsOn,
+}) {
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
 
   return (
     <div className="header">
@@ -17,16 +20,34 @@ const handleChange=(e)=>{
         <img className="logo" src={logo} alt="image not found" />
       </Link>
       <p className="logo-text">SMART CART</p>
-  
 
       <div className="search-container">
-        <input type="text" disabled={currentPage==="add" || currentPage==="update"} onChange={handleChange}/>
-        <div className="search-icon" value={search} onClick={currentPage==="home" ? searchIconClick:undefined}>
-          <Search color="grey" size="30px" />
+        <input
+          type="text"
+          value={search}
+          disabled={currentPage === "add" || currentPage === "update"}
+          onChange={handleChange}
+        />
+        <div
+          className="search-icon"
+          onClick={currentPage === "home" ? searchIconClick : undefined}
+        >
+          {searchIsOn ? (
+            <BadgeX
+              color="grey"
+              size="30px"
+            />
+          ) : (
+            <Search color="grey" size="30px" />
+          )}
         </div>
       </div>
       <div className="categories">
-        <select name="select" id="" disabled={currentPage==="add" || currentPage==="update"} >
+        <select
+          name="select"
+          id=""
+          disabled={currentPage === "add" || currentPage === "update"}
+        >
           <option className="values" value="All">
             All
           </option>
@@ -46,8 +67,8 @@ const handleChange=(e)=>{
             Kids
           </option>
           <option className="values" value="party">
-          party
-        </option>
+            party
+          </option>
           <option className="values" value="vehicles">
             Vehicles
           </option>

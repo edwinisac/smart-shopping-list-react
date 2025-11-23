@@ -3,18 +3,18 @@
     {
       "name": "orange",
       "price": "50",
-      "qty": "2",
+      "qty": "3",
       "category": "food",
       "status": false,
       "id": "dc4f"
     },
     {
-      "id": "aad0",
+      "id": "4ceb",
       "name": "apple",
-      "price": "180",
-      "qty": "2",
+      "price": "45",
+      "qty": "5",
       "category": "food",
-      "status": false
+      "status": true
     }
   ]
 }
