@@ -9,10 +9,16 @@ export function Header({
   search,
   searchIconClick,
   searchIsOn,
+  categoryValue,
+  setCategoryValue
 }) {
   const handleChange = (e) => {
     setSearch(e.target.value);
   };
+
+const handleCtgryChange=(e)=>{
+  setCategoryValue(e.target.value)
+}
 
   return (
     <div className="header">
@@ -46,9 +52,11 @@ export function Header({
         <select
           name="select"
           id=""
+          value={categoryValue}
           disabled={currentPage === "add" || currentPage === "update"}
+          onChange={handleCtgryChange}
         >
-          <option className="values" value="All">
+          <option className="values" value="all">
             All
           </option>
           <option className="values" value="food">

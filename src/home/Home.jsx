@@ -39,6 +39,8 @@ export function Home({ items, fetchItemData }) {
     setSearchIsOn(!searchIsOn);
   };
 
+  const [categoryValue,setCategoryValue]=useState("all");
+
   return (
     <>
       <title>smart cart</title>
@@ -48,56 +50,68 @@ export function Home({ items, fetchItemData }) {
         search={search}
         searchIconClick={searchIconClick}
         searchIsOn={searchIsOn}
+        categoryValue={categoryValue}
+        setCategoryValue={setCategoryValue}
       />
       <div className="home-container">
         <ul className="list">
           {searchIsOn &&
             (() => {
-              const foundItem = items.find((item) => item.name === search.toLowerCase());
-              return foundItem ? (
-                <li
-                  key={foundItem.id}
-                  className={`${foundItem.status && "item-checked"} list-item `}
-                >
-                  {/*add class name item-checked to lis-item for checked features  */}
-                  <div
-                    className="checkbox"
-                    onClick={() => {
-                      handleClick(foundItem);
-                    }}
-                  >
-                    {/* add this button for showing check mark */}
-                    {foundItem.status && (
-                      <Check color="green" size="20px" strokeWidth="4px" />
-                    )}
-                  </div>
-                  <p
-                    className="item-name"
-                    onClick={() => {
-                      handleClick(foundItem);
-                    }}
-                  >
-                    {foundItem.name}
-                  </p>
-                  <p className="item-quantity">
-                    {foundItem.qty} <span className="quantity-symbol">x</span>
-                  </p>
-                  <p className="item-price">
-                    <span className="price-symbol">₹</span> {foundItem.price}
-                  </p>
-                  <button
-                    className="update-button list-button"
-                    onClick={() => handleUpdateButton(foundItem)}
-                  >
-                    <Pen size="20px" color="blue" />
-                  </button>
-                  <button
-                    className="delete-button list-button"
-                    onClick={() => handleDeleteButton(foundItem)}
-                  >
-                    <Trash2 size="20px" color="red" />
-                  </button>
-                </li>
+              const foundItemArray = items.filter(
+                (item) => item.name.toLowerCase() === search.toLowerCase()
+              );
+              return foundItemArray.length > 0 ? (
+                foundItemArray.map((foundItem) => {
+                  return (
+                    <li
+                      key={foundItem.id}
+                      className={`${
+                        foundItem.status && "item-checked"
+                      } list-item `}
+                    >
+                      {/*add class name item-checked to lis-item for checked features  */}
+                      <div
+                        className="checkbox"
+                        onClick={() => {
+                          handleClick(foundItem);
+                        }}
+                      >
+                        {/* add this button for showing check mark */}
+                        {foundItem.status && (
+                          <Check color="green" size="20px" strokeWidth="4px" />
+                        )}
+                      </div>
+                      <p
+                        className="item-name"
+                        onClick={() => {
+                          handleClick(foundItem);
+                        }}
+                      >
+                        {foundItem.name}
+                      </p>
+                      <p className="item-quantity">
+                        {foundItem.qty}{" "}
+                        <span className="quantity-symbol">x</span>
+                      </p>
+                      <p className="item-price">
+                        <span className="price-symbol">₹</span>{" "}
+                        {foundItem.price}
+                      </p>
+                      <button
+                        className="update-button list-button"
+                        onClick={() => handleUpdateButton(foundItem)}
+                      >
+                        <Pen size="20px" color="blue" />
+                      </button>
+                      <button
+                        className="delete-button list-button"
+                        onClick={() => handleDeleteButton(foundItem)}
+                      >
+                        <Trash2 size="20px" color="red" />
+                      </button>
+                    </li>
+                  );
+                })
               ) : (
                 <p className="not-found">Not Found</p>
               );
@@ -151,22 +165,6 @@ export function Home({ items, fetchItemData }) {
                 </li>
               );
             })}
-
-          {/* <li className="list-item item-checked">
-            <div className="checkbox">
-              <Check color="green" size="20px" strokeWidth="4px" />
-            </div>
-            <p className="item-name">New Item </p>
-            <p className="item-price">
-              <span className="price-symbol">₹</span> 100
-            </p>
-            <button className="update-button list-button">
-              <Pen size="20px" color="blue" />
-            </button>
-            <button className="delete-button list-button">
-              <Trash2 size="20px" color="red" />
-            </button>
-          </li> */}
         </ul>
         <hr className="horizontal-line" />
         <div className="home-panel">

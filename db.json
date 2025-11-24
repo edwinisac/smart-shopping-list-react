@@ -1,20 +1,20 @@
 {
   "items": [
     {
-      "name": "orange",
-      "price": "50",
-      "qty": "3",
-      "category": "food",
-      "status": false,
-      "id": "dc4f"
-    },
-    {
       "id": "4ceb",
       "name": "apple",
       "price": "45",
       "qty": "5",
       "category": "food",
-      "status": true
+      "status": false
+    },
+    {
+      "id": "02cf",
+      "name": "orange",
+      "price": "200",
+      "qty": "4",
+      "category": "food",
+      "status": false
     }
   ]
 }
