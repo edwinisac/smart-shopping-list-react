@@ -1,10 +1,13 @@
 import { Header } from "../components/Header";
+import { SearchResult } from "./SearchResult";
 import { Link, useNavigate } from "react-router-dom";
 
 import "./home.css";
-import { Pen, Trash2, Check, Plus } from "lucide-react";
+import {  Plus } from "lucide-react";
 import axios from "axios";
 import { useState } from "react";
+import { AllItems } from "./AllItems";
+import { CategoryFilter } from "./CategoryFilter";
 
 export function Home({ items, fetchItemData }) {
   let quantity = 0;
@@ -39,7 +42,11 @@ export function Home({ items, fetchItemData }) {
     setSearchIsOn(!searchIsOn);
   };
 
-  const [categoryValue,setCategoryValue]=useState("all");
+  const [categoryValue, setCategoryValue] = useState("all");
+
+  const categoryFilterdArray = items.filter(
+    (item) => item.category?.toLowerCase() === categoryValue.toLowerCase()
+  );
 
   return (
     <>
@@ -55,116 +62,32 @@ export function Home({ items, fetchItemData }) {
       />
       <div className="home-container">
         <ul className="list">
-          {searchIsOn &&
-            (() => {
-              const foundItemArray = items.filter(
-                (item) => item.name.toLowerCase() === search.toLowerCase()
-              );
-              return foundItemArray.length > 0 ? (
-                foundItemArray.map((foundItem) => {
-                  return (
-                    <li
-                      key={foundItem.id}
-                      className={`${
-                        foundItem.status && "item-checked"
-                      } list-item `}
-                    >
-                      {/*add class name item-checked to lis-item for checked features  */}
-                      <div
-                        className="checkbox"
-                        onClick={() => {
-                          handleClick(foundItem);
-                        }}
-                      >
-                        {/* add this button for showing check mark */}
-                        {foundItem.status && (
-                          <Check color="green" size="20px" strokeWidth="4px" />
-                        )}
-                      </div>
-                      <p
-                        className="item-name"
-                        onClick={() => {
-                          handleClick(foundItem);
-                        }}
-                      >
-                        {foundItem.name}
-                      </p>
-                      <p className="item-quantity">
-                        {foundItem.qty}{" "}
-                        <span className="quantity-symbol">x</span>
-                      </p>
-                      <p className="item-price">
-                        <span className="price-symbol">₹</span>{" "}
-                        {foundItem.price}
-                      </p>
-                      <button
-                        className="update-button list-button"
-                        onClick={() => handleUpdateButton(foundItem)}
-                      >
-                        <Pen size="20px" color="blue" />
-                      </button>
-                      <button
-                        className="delete-button list-button"
-                        onClick={() => handleDeleteButton(foundItem)}
-                      >
-                        <Trash2 size="20px" color="red" />
-                      </button>
-                    </li>
-                  );
-                })
-              ) : (
-                <p className="not-found">Not Found</p>
-              );
-            })()}
-
-          {!searchIsOn &&
-            items.map((item) => {
-              return (
-                <li
-                  key={item.id}
-                  className={`${item.status && "item-checked"} list-item `}
-                >
-                  {/*add class name item-checked to lis-item for checked features  */}
-                  <div
-                    className="checkbox"
-                    onClick={() => {
-                      handleClick(item);
-                    }}
-                  >
-                    {/* add this button for showing check mark */}
-                    {item.status && (
-                      <Check color="green" size="20px" strokeWidth="4px" />
-                    )}
-                  </div>
-                  <p
-                    className="item-name"
-                    onClick={() => {
-                      handleClick(item);
-                    }}
-                  >
-                    {item.name}
-                  </p>
-                  <p className="item-quantity">
-                    {item.qty} <span className="quantity-symbol">x</span>
-                  </p>
-                  <p className="item-price">
-                    <span className="price-symbol">₹</span> {item.price}
-                  </p>
-                  <button
-                    className="update-button list-button"
-                    onClick={() => handleUpdateButton(item)}
-                  >
-                    <Pen size="20px" color="blue" />
-                  </button>
-                  <button
-                    className="delete-button list-button"
-                    onClick={() => handleDeleteButton(item)}
-                  >
-                    <Trash2 size="20px" color="red" />
-                  </button>
-                </li>
-              );
-            })}
+          {searchIsOn ? (
+            <SearchResult
+              items={items}
+              search={search}
+              handleClick={handleClick}
+              handleDeleteButton={handleDeleteButton}
+              handleUpdateButton={handleUpdateButton}
+              searchIsOn={searchIsOn}
+            />
+          ) : categoryValue === "all" ? (
+            <AllItems
+              items={items}
+              handleClick={handleClick}
+              handleDeleteButton={handleDeleteButton}
+              handleUpdateButton={handleUpdateButton}
+            />
+          ) : categoryFilterdArray.length > 0 ? (
+            <CategoryFilter
+              categoryFilterdArray={categoryFilterdArray}
+              handleClick={handleClick}
+              handleDeleteButton={handleDeleteButton}
+              handleUpdateButton={handleUpdateButton}
+            />
+          ) : (
+            <p className="not-found">Not Found</p>
+          )}
         </ul>
         <hr className="horizontal-line" />
         <div className="home-panel">

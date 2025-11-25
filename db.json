@@ -6,7 +6,7 @@
       "price": "45",
       "qty": "5",
       "category": "food",
-      "status": false
+      "status": true
     },
     {
       "id": "02cf",
@@ -15,6 +15,46 @@
       "qty": "4",
       "category": "food",
       "status": false
+    },
+    {
+      "id": "e44b",
+      "name": "shorts",
+      "price": "299",
+      "qty": "1",
+      "category": "clothing",
+      "status": false
+    },
+    {
+      "id": "3053",
+      "name": "dash cam",
+      "price": "4500",
+      "qty": "1",
+      "category": "vehicles",
+      "status": false
+    },
+    {
+      "name": "trousers",
+      "price": "600",
+      "qty": "1",
+      "category": "kids",
+      "status": false,
+      "id": "cb18"
+    },
+    {
+      "id": "0c7d",
+      "name": "apple",
+      "price": "300",
+      "qty": "5",
+      "category": "food",
+      "status": true
+    },
+    {
+      "id": "9643",
+      "name": "plate",
+      "price": "40",
+      "qty": "60",
+      "category": "party",
+      "status": true
     }
   ]
 }
