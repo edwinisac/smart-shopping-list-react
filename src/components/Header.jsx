@@ -20,6 +20,17 @@ const handleCtgryChange=(e)=>{
   setCategoryValue(e.target.value)
 }
 
+const handleKeyPress=(e)=>{
+  console.log(e.key)
+  if(!searchIsOn && e.key==="Enter"){
+    searchIconClick();
+  }
+  if(e.key==="Escape"){
+    !searchIsOn ? setSearch(""): searchIconClick();
+
+  }
+}
+
   return (
     <div className="header">
       <Link to="/">
@@ -33,6 +44,7 @@ const handleCtgryChange=(e)=>{
           value={search}
           disabled={currentPage === "add" || currentPage === "update"}
           onChange={handleChange}
+          onKeyDown={handleKeyPress}
         />
         <div
           className="search-icon"

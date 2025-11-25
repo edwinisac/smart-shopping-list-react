@@ -55,6 +55,14 @@
       "qty": "60",
       "category": "party",
       "status": true
+    },
+    {
+      "id": "498d",
+      "name": "hair dye",
+      "price": "350",
+      "qty": "1",
+      "category": "beauty",
+      "status": false
     }
   ]
 }

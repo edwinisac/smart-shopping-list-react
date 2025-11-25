@@ -111,7 +111,7 @@ export function Form({ currentPage, items, id, fetchItemData }) {
           Clothing
         </option>
         <option className="values" value="beauty">
-          Beuty
+          Beauty
         </option>
         <option className="values" value="electronics">
           Electronics
