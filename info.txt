@@ -1,0 +1,6 @@
+how to run backend locally
+
+cd smart-shopping-list-react
+
+
+json-server --watch db.json --port 3000

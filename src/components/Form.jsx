@@ -3,6 +3,7 @@ import "./form.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
 export function Form({ currentPage, items, id, fetchItemData }) {
   const [formData, setFormData] = useState({
     name: "",
@@ -35,7 +36,7 @@ export function Form({ currentPage, items, id, fetchItemData }) {
   };
 
   const addButtonClick = async () => {
-    await axios.post("http://localhost:5000/items", {
+    await axios.post(`http://localhost:3000/items`, {
       ...formData,
     status:false
     });
@@ -44,7 +45,7 @@ export function Form({ currentPage, items, id, fetchItemData }) {
   };
 
   const updateButtonClick = async () => {
-    await axios.put(`http://localhost:5000/items/${id}`, {
+    await axios.put(`http://localhost:3000/items/${id}`, {
       ...formData,
       status: selectedItem.status,
     });

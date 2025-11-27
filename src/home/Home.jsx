@@ -18,7 +18,7 @@ export function Home({ items, fetchItemData }) {
   });
 
   const handleClick = async (item) => {
-    await axios.patch(`http://localhost:5000/items/${item.id}`, {
+    await axios.patch(`http://localhost:3000/items/${item.id}`, {
       status: !item.status,
     });
     await fetchItemData();
@@ -30,7 +30,7 @@ export function Home({ items, fetchItemData }) {
   };
 
   const handleDeleteButton = async (item) => {
-    await axios.delete(`http://localhost:5000/items/${item.id}`);
+    await axios.delete(`http://localhost:3000/items/${item.id}`);
     await fetchItemData();
   };
 

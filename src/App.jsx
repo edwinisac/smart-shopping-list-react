@@ -3,6 +3,7 @@ import { AddItem } from './add-item/AddItem';
 import { Update } from './update-item/Update';
 import { Error } from './pageError/Error';
 
+
 import { Routes,Route} from 'react-router-dom';
 import './App.css'
 import { useState ,useEffect} from 'react';
@@ -19,7 +20,7 @@ function App() {
   const [items, setitems] = useState([]);
 
   const fetchItemData = async () => {
-    const res = await axios.get("http://localhost:5000/items");
+    const res = await axios.get(`http://localhost:3000/items`);
     setitems(res.data);
   };
 

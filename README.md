@@ -1,16 +1,33 @@
-# React + Vite
+# 🛒 Smart Shopping List
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and smart shopping list web application built with **React** that allows users to manage shopping items efficiently. This project supports full **CRUD operations** (Create, Read, Update, Delete) using a mock backend.
 
-Currently, two official plugins are available:
+This project currently runs **only in local development** and is **not deployed yet**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Add new shopping items  
+- Edit and update existing items  
+- Delete items from the list  
+- Mark items as completed  
+- Search and filter functionality  
+- Category-based item organization  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- **Frontend**: React (Vite)  
+- **Mock Backend**: json-server  
+- **HTTP Client**: Axios  
+- **Styling**: CSS  
+
+---
+
+
+##  Clone the repository
+
+```bash
+git clone https://github.com/edwinisac/smart-shopping-list-react.git

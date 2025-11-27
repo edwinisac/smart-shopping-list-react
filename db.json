@@ -1,14 +1,6 @@
 {
   "items": [
     {
-      "id": "4ceb",
-      "name": "apple",
-      "price": "45",
-      "qty": "5",
-      "category": "food",
-      "status": true
-    },
-    {
       "id": "02cf",
       "name": "orange",
       "price": "200",
@@ -62,6 +54,14 @@
       "price": "350",
       "qty": "1",
       "category": "beauty",
+      "status": false
+    },
+    {
+      "id": "076b",
+      "name": "apple-kashmir",
+      "price": "45",
+      "qty": "2",
+      "category": "food",
       "status": false
     }
   ]
